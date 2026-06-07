@@ -12,7 +12,7 @@ add_executable(${PROJECT_NAME}
 
 target_link_libraries(${PROJECT_NAME}
         PRIVATE
-        ExamplePlugin
+        ExamplePlugin_SharedCode
         GTest::gtest_main
         juce::juce_audio_utils
 )
