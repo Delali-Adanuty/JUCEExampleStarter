@@ -2,15 +2,32 @@ cmake_minimum_required(VERSION 3.22)
 
 project(ExamplePlugin VERSION 0.1.0)
 
+if(CMAKE_SYSTEM_NAME STREQUAL "Windows")
+    # Sets the Windows VST3 installation location to one
+    # that doesn't require elevated permissions
+    set_directory_properties(PROPERTIES JUCE_VST3_COPY_DIR "C:/Program Files/Common Files/VST3")
+endif()
+
+set(EXAMPLE_PLUGIN_NAME "Example")
 juce_add_plugin(${PROJECT_NAME}
-    COMPANY_NAME Adanuty
-    IS_SYNTH FALSE
-    NEEDS_MIDI_INPUT FALSE
-    NEEDS_MIDI_OUPUT FALSE 
-    PLUGIN_MANUFACTURER_CODE Adty
-    PLUGIN_CODE EXML
-    FORMATS VST3 Standalone
-    PRODUCT_NAME "Example"
+        COMPANY_NAME
+            Adanuty
+        IS_SYNTH
+            FALSE
+        NEEDS_MIDI_INPUT
+            FALSE
+        NEEDS_MIDI_OUPUT
+            FALSE
+        PLUGIN_MANUFACTURER_CODE
+            Adty
+        PLUGIN_CODE
+            EXML
+        FORMATS
+            VST3 Standalone
+        PRODUCT_NAME
+            ${EXAMPLE_PLUGIN_NAME}
+        COPY_PLUGIN_AFTER_BUILD
+            TRUE
 )
 
 target_sources(${PROJECT_NAME}
