@@ -2,7 +2,7 @@
 #
 # SPDX-FileCopyrightText: Copyright (c) 2019-2023 Lars Melchior and contributors
 
-set(CPM_DOWNLOAD_VERSION 0.38.2)
+set(CPM_DOWNLOAD_VERSION 0.42.3)
 
 
 
